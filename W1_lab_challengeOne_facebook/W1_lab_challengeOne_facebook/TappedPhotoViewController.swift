@@ -12,6 +12,7 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var tappedScrollView: UIScrollView!
     @IBOutlet weak var tappedImageView: UIImageView!
+    
     @IBOutlet weak var tappedPhotoPageControl: UIPageControl!
     var tappedImageCenterX: CGFloat!
     var wedding_1: UIImage!
@@ -24,6 +25,7 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
     var image: UIImage!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tappedImageView.image = image
         tappedScrollView.delegate = self
         
         tappedImageCenterX = view.center.x
@@ -31,8 +33,6 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
         
         tappedScrollView.contentSize = CGSize(width: 1875, height: 667)
         tappedScrollView.frame.size = CGSize(width: 375, height: 667)
-        
-        
         
         wedding_1 = UIImage(named: "wedding1")
         wedding_2 = UIImage(named: "wedding2")
@@ -42,22 +42,22 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
         
         tappedPhotoPageControl.currentPage = 0
   
-        let page: Int = Int(round(tappedScrollView.contentOffset.x / 375))
-        tappedPhotoPageControl.currentPage = page
-        
-        if page == 0 {
-            tappedImageView.image = wedding_1
-            
-        } else if page == 1 {
-            tappedImageView.image = wedding_2
-            
-        } else if page == 2 {
-            tappedImageView.image = wedding_3
-        } else if page == 3 {
-            tappedImageView.image = wedding_4
-        } else if page == 4{
-            tappedImageView.image = wedding_5
-        }
+//        let page: Int = Int(round(tappedScrollView.contentOffset.x / 375))
+//        tappedPhotoPageControl.currentPage = page
+//        
+//        if page == 0 {
+//            tappedImageView.image = wedding_1
+//            
+//        } else if page == 1 {
+//            tappedImageView.image = wedding_2
+//            
+//        } else if page == 2 {
+//            tappedImageView.image = wedding_3
+//        } else if page == 3 {
+//            tappedImageView.image = wedding_4
+//        } else if page == 4{
+//            tappedImageView.image = wedding_5
+//        }
      
         
         
@@ -77,31 +77,31 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let page: Int = Int(round(tappedScrollView.contentOffset.x / 375))
-        tappedPhotoPageControl.currentPage = page
-        if page == 0 {
-            print("is on page 0")
-            
-            tappedImageView.image = wedding_1
-            tappedImageView.center.x = tappedImageCenterX
-
-            
-        } else if page == 1 {
-            print("is on page 1")
-            tappedImageView.image = wedding_2
-            tappedImageView.center.x = tappedImageCenterX * 3
-            
-        } else if page == 2 {
-            print("is on page 2")
-            tappedImageView.image = wedding_3
-            tappedImageView.center.x = tappedImageCenterX * 5
-        } else if page == 3 {
-            tappedImageView.image = wedding_4
-            tappedImageView.center.x = tappedImageCenterX * 7
-        } else if page == 4{
-            tappedImageView.image = wedding_5
-            tappedImageView.center.x = tappedImageCenterX * 9
-        }
+//        let page: Int = Int(round(tappedScrollView.contentOffset.x / 375))
+//        tappedPhotoPageControl.currentPage = page
+//        if page == 0 {
+//            print("is on page 0")
+//            
+//            tappedImageView.image = wedding_1
+//            tappedImageView.center.x = tappedImageCenterX
+//
+//            
+//        } else if page == 1 {
+//            print("is on page 1")
+//            tappedImageView.image = wedding_2
+//            tappedImageView.center.x = tappedImageCenterX * 3
+//            
+//        } else if page == 2 {
+//            print("is on page 2")
+//            tappedImageView.image = wedding_3
+//            tappedImageView.center.x = tappedImageCenterX * 5
+//        } else if page == 3 {
+//            tappedImageView.image = wedding_4
+//            tappedImageView.center.x = tappedImageCenterX * 7
+//        } else if page == 4{
+//            tappedImageView.image = wedding_5
+//            tappedImageView.center.x = tappedImageCenterX * 9
+//        }
         
     }
 

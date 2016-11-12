@@ -12,6 +12,8 @@
 		CE63055D1DAE19C70079496D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE63055B1DAE19C70079496D /* Main.storyboard */; };
 		CE63055F1DAE19C70079496D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE63055E1DAE19C70079496D /* Assets.xcassets */; };
 		CE6305621DAE19C70079496D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6305601DAE19C70079496D /* LaunchScreen.storyboard */; };
+		CE9201821DD6B10100E2F96B /* ImageTranstition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9201811DD6B10100E2F96B /* ImageTranstition.swift */; };
+		CE9201841DD6B10B00E2F96B /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9201831DD6B10B00E2F96B /* BaseTransition.swift */; };
 		CE93B4A61DB9AF5F007E8621 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93B4A51DB9AF5F007E8621 /* Common.swift */; };
 		CE93B4A81DB9B14E007E8621 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93B4A71DB9B14E007E8621 /* LoginViewController.swift */; };
 		CEBF5BD31DD655B700356C40 /* TappedPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF5BD21DD655B700356C40 /* TappedPhotoViewController.swift */; };
@@ -34,6 +36,8 @@
 		CE63055E1DAE19C70079496D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6305611DAE19C70079496D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE6305631DAE19C70079496D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE9201811DD6B10100E2F96B /* ImageTranstition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTranstition.swift; sourceTree = "<group>"; };
+		CE9201831DD6B10B00E2F96B /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		CE93B4A51DB9AF5F007E8621 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		CE93B4A71DB9B14E007E8621 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEBF5BD21DD655B700356C40 /* TappedPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TappedPhotoViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 				CE6305561DAE19C70079496D /* W1_lab_challengeOne_facebook */,
 				CE6305551DAE19C70079496D /* Products */,
 				CE93B4A51DB9AF5F007E8621 /* Common.swift */,
+				CE9201811DD6B10100E2F96B /* ImageTranstition.swift */,
+				CE9201831DD6B10B00E2F96B /* BaseTransition.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,7 +88,7 @@
 				CE6305571DAE19C70079496D /* AppDelegate.swift */,
 				CE63055B1DAE19C70079496D /* Main.storyboard */,
 				CEBF5BD21DD655B700356C40 /* TappedPhotoViewController.swift */,
-				CE93B4A71DB9B14E007E8621 /* LoginViewController.swift */,
+				CECF20C91DAE231E007D5F31 /* FeedViewController.swift */,
 				CECF20DB1DAF0384007D5F31 /* view controlers */,
 				CE63055E1DAE19C70079496D /* Assets.xcassets */,
 				CE6305601DAE19C70079496D /* LaunchScreen.storyboard */,
@@ -97,13 +103,13 @@
 				CE6305591DAE19C70079496D /* ViewController.swift */,
 				CECF20D11DAE2370007D5F31 /* MoreViewController.swift */,
 				CECF20D51DAF0355007D5F31 /* StatusViewController.swift */,
+				CE93B4A71DB9B14E007E8621 /* LoginViewController.swift */,
 				CECF20D71DAF0361007D5F31 /* PhotoViewController.swift */,
 				CECF20D91DAF036A007D5F31 /* CheckInViewController.swift */,
 				CECF20CF1DAE235E007D5F31 /* NotificationsViewController.swift */,
 				CECF20CD1DAE2345007D5F31 /* MessagesViewController.swift */,
 				CECF20D31DAED098007D5F31 /* DetailViewController.swift */,
 				CECF20CB1DAE232E007D5F31 /* RequestsViewController.swift */,
-				CECF20C91DAE231E007D5F31 /* FeedViewController.swift */,
 			);
 			name = "view controlers";
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 				CE63055A1DAE19C70079496D /* ViewController.swift in Sources */,
 				CECF20CA1DAE231E007D5F31 /* FeedViewController.swift in Sources */,
 				CE93B4A61DB9AF5F007E8621 /* Common.swift in Sources */,
+				CE9201841DD6B10B00E2F96B /* BaseTransition.swift in Sources */,
 				CECF20D01DAE235E007D5F31 /* NotificationsViewController.swift in Sources */,
 				CECF20CC1DAE232E007D5F31 /* RequestsViewController.swift in Sources */,
 				CE6305581DAE19C70079496D /* AppDelegate.swift in Sources */,
@@ -194,6 +201,7 @@
 				CECF20D41DAED098007D5F31 /* DetailViewController.swift in Sources */,
 				CECF20DA1DAF036A007D5F31 /* CheckInViewController.swift in Sources */,
 				CE93B4A81DB9B14E007E8621 /* LoginViewController.swift in Sources */,
+				CE9201821DD6B10100E2F96B /* ImageTranstition.swift in Sources */,
 				CECF20D81DAF0361007D5F31 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

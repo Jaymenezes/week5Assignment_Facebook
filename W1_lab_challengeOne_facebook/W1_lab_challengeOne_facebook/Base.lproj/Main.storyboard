@@ -153,7 +153,7 @@
         <scene sceneID="04X-9F-QPa">
             <objects>
                 <viewController id="bcC-5s-6Kp" customClass="TappedPhotoViewController" customModule="W1_lab_challengeOne_facebook" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" alpha="0.90000000000000002" contentMode="scaleToFill" misplaced="YES" id="0WQ-dI-PtF">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="0WQ-dI-PtF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -189,7 +189,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="tappedImageView" destination="6L5-zg-MBR" id="Xdb-Dd-U5t"/>
+                        <outlet property="tappedImageView" destination="6L5-zg-MBR" id="CLH-h9-cyX"/>
                         <outlet property="tappedPhotoPageControl" destination="jtc-Zu-IsI" id="1Y5-E1-Urf"/>
                         <outlet property="tappedScrollView" destination="lcp-sn-e02" id="1VO-yh-arf"/>
                     </connections>
@@ -225,7 +225,12 @@
                                             <segue destination="ht5-Of-Nwt" kind="push" id="JSr-r5-Fhm"/>
                                         </connections>
                                     </button>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="wedding1" id="IbD-T0-7e9">
+                                    <view contentMode="scaleToFill" misplaced="YES" id="RDP-EG-rTG">
+                                        <rect key="frame" x="4" y="94" width="367" height="367"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFill" misplaced="YES" image="wedding1" id="IbD-T0-7e9">
                                         <rect key="frame" x="4" y="94" width="182" height="181"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
@@ -233,15 +238,7 @@
                                             <outletCollection property="gestureRecognizers" destination="Qtl-qD-q6G" appends="YES" id="jnR-NV-IDw"/>
                                         </connections>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="wedding3" id="cnC-Vp-1f9">
-                                        <rect key="frame" x="190" y="94" width="181" height="120"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="eeO-Fd-2da" appends="YES" id="Yhm-gV-6gl"/>
-                                        </connections>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="wedding2" id="Wxr-wr-enx">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFill" misplaced="YES" image="wedding2" id="Wxr-wr-enx">
                                         <rect key="frame" x="4" y="280" width="180" height="181"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
@@ -249,7 +246,15 @@
                                             <outletCollection property="gestureRecognizers" destination="06y-Eq-IPM" appends="YES" id="bzl-zJ-yoo"/>
                                         </connections>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="wedding4" id="M17-ad-ipl">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFill" misplaced="YES" image="wedding3" id="cnC-Vp-1f9">
+                                        <rect key="frame" x="190" y="94" width="181" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="eeO-Fd-2da" appends="YES" id="Yhm-gV-6gl"/>
+                                        </connections>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFill" misplaced="YES" image="wedding4" id="M17-ad-ipl">
                                         <rect key="frame" x="190" y="218" width="181" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
@@ -257,7 +262,7 @@
                                             <outletCollection property="gestureRecognizers" destination="PAz-pn-sV0" appends="YES" id="ChM-Un-h64"/>
                                         </connections>
                                     </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" misplaced="YES" image="wedding5" id="5Bv-Xz-Fxw">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleAspectFill" misplaced="YES" image="wedding5" id="5Bv-Xz-Fxw">
                                         <rect key="frame" x="190" y="341" width="181" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <gestureRecognizers/>
@@ -299,7 +304,6 @@
                     <connections>
                         <outlet property="feedScrollView" destination="0zi-mG-ehn" id="bAb-gl-gcp"/>
                         <outlet property="homeFeed" destination="GRk-k4-8Vz" id="UVJ-KQ-cGb"/>
-                        <outlet property="wedding1" destination="IbD-T0-7e9" id="DP3-4b-Qqr"/>
                         <segue destination="bcC-5s-6Kp" kind="modal" identifier="segueToTappedPhoto" id="cV3-Ga-GtM"/>
                     </connections>
                 </viewController>

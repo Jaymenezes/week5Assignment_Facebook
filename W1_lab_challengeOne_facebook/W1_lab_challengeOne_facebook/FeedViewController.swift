@@ -12,12 +12,15 @@ class FeedViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var feedScrollView: UIScrollView!
     @IBOutlet weak var homeFeed: UIImageView!
-    @IBOutlet weak var wedding1: UIImageView!
+    var imageTransition: ImageTranstition!
+    var selectedImageView: UIImageView!
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         feedScrollView.delegate = self
         feedScrollView.contentSize = homeFeed.frame.size
     }
@@ -28,7 +31,8 @@ class FeedViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func didTapPhotoImageView(_ sender: UITapGestureRecognizer) {
-        
+        selectedImageView = sender.view as! UIImageView
+        selectedImageView.frame = sender.view!.frame
         performSegue(withIdentifier: "segueToTappedPhoto", sender: nil)
         sender.numberOfTapsRequired = 2
         
@@ -37,22 +41,19 @@ class FeedViewController: UIViewController, UIScrollViewDelegate {
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
-        
+ 
         let tappedPhotoViewController = segue.destination as! TappedPhotoViewController
-        tappedPhotoViewController.image = wedding1.image
-//        tappedPhotoViewController.tappedPhotoPageControl.currentPage = 2
+        
+        tappedPhotoViewController.modalPresentationStyle = .custom
+        
+        imageTransition = ImageTranstition()
+        
+        tappedPhotoViewController.transitioningDelegate = imageTransition
+        
+        imageTransition.duration = 1
+                tappedPhotoViewController.image = selectedImageView.image
 
-        
-        
-//        profileViewController.modalPresentationStyle = .custom
-//        
-//        imageTransition = ImageTranstition()
-//        
-//        profileViewController.transitioningDelegate = imageTransition
-//        
-//        imageTransition.duration = 0.4
-        
-        
+
     }
     
 

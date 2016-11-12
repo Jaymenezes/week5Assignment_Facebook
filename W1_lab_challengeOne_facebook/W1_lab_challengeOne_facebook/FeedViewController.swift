@@ -10,6 +10,7 @@ import UIKit
 
 class FeedViewController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet weak var navBar: UIImageView!
     @IBOutlet weak var feedScrollView: UIScrollView!
     @IBOutlet weak var homeFeed: UIImageView!
     var imageTransition: ImageTranstition!
@@ -50,7 +51,7 @@ class FeedViewController: UIViewController, UIScrollViewDelegate {
         
         tappedPhotoViewController.transitioningDelegate = imageTransition
         
-        imageTransition.duration = 1
+        imageTransition.duration = 0.4
                 tappedPhotoViewController.image = selectedImageView.image
 
 

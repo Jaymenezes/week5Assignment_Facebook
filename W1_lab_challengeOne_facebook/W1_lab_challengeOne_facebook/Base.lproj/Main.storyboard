@@ -158,17 +158,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="photo_actions" id="Ae4-oG-ThA">
-                                <rect key="frame" x="0.0" y="614" width="375" height="53"/>
+                                <rect key="frame" x="0.0" y="614" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" pagingEnabled="YES" id="lcp-sn-e02">
-                                <rect key="frame" x="0.0" y="64" width="375" height="542"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" pagingEnabled="YES" maximumZoomScale="4" id="lcp-sn-e02">
+                                <rect key="frame" x="0.0" y="65" width="375" height="540"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="6L5-zg-MBR">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="542"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="6L5-zg-MBR">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="540"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" misplaced="YES" id="XuG-yv-JaY">
+                                        <rect key="frame" x="-58" y="-63" width="240" height="63"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vfJ-Ul-VCg">
@@ -196,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jlk-lQ-nI5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2864" y="2515"/>
+            <point key="canvasLocation" x="-2864.5" y="2514.5"/>
         </scene>
         <!--Feed View Controller-->
         <scene sceneID="5MC-uJ-3tC">
@@ -207,7 +212,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="compose" id="rgy-WF-anU">
-                                <rect key="frame" x="0.0" y="72" width="375" height="57"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" id="0zi-mG-ehn">
@@ -215,7 +220,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="home_feed@2x copy" id="GRk-k4-8Vz">
-                                        <rect key="frame" x="0.0" y="-3" width="375" height="1688"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1688"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aeb-XN-hmg">
@@ -304,6 +309,7 @@
                     <connections>
                         <outlet property="feedScrollView" destination="0zi-mG-ehn" id="bAb-gl-gcp"/>
                         <outlet property="homeFeed" destination="GRk-k4-8Vz" id="UVJ-KQ-cGb"/>
+                        <outlet property="navBar" destination="S6Q-Fb-ZWx" id="glY-q4-qiX"/>
                         <segue destination="bcC-5s-6Kp" kind="modal" identifier="segueToTappedPhoto" id="cV3-Ga-GtM"/>
                     </connections>
                 </viewController>

@@ -14,6 +14,7 @@
 		CE6305621DAE19C70079496D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6305601DAE19C70079496D /* LaunchScreen.storyboard */; };
 		CE93B4A61DB9AF5F007E8621 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93B4A51DB9AF5F007E8621 /* Common.swift */; };
 		CE93B4A81DB9B14E007E8621 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE93B4A71DB9B14E007E8621 /* LoginViewController.swift */; };
+		CEBF5BD31DD655B700356C40 /* TappedPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF5BD21DD655B700356C40 /* TappedPhotoViewController.swift */; };
 		CECF20CA1DAE231E007D5F31 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF20C91DAE231E007D5F31 /* FeedViewController.swift */; };
 		CECF20CC1DAE232E007D5F31 /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF20CB1DAE232E007D5F31 /* RequestsViewController.swift */; };
 		CECF20CE1DAE2345007D5F31 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECF20CD1DAE2345007D5F31 /* MessagesViewController.swift */; };
@@ -35,6 +36,7 @@
 		CE6305631DAE19C70079496D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE93B4A51DB9AF5F007E8621 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		CE93B4A71DB9B14E007E8621 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CEBF5BD21DD655B700356C40 /* TappedPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TappedPhotoViewController.swift; sourceTree = "<group>"; };
 		CECF20C91DAE231E007D5F31 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		CECF20CB1DAE232E007D5F31 /* RequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		CECF20CD1DAE2345007D5F31 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				CE6305571DAE19C70079496D /* AppDelegate.swift */,
 				CE63055B1DAE19C70079496D /* Main.storyboard */,
+				CEBF5BD21DD655B700356C40 /* TappedPhotoViewController.swift */,
 				CE93B4A71DB9B14E007E8621 /* LoginViewController.swift */,
 				CECF20DB1DAF0384007D5F31 /* view controlers */,
 				CE63055E1DAE19C70079496D /* Assets.xcassets */,
@@ -142,7 +145,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CE63054F1DAE19C70079496D /* Build configuration list for PBXProject "week5_assgmntFacebook" */;
+			buildConfigurationList = CE63054F1DAE19C70079496D /* Build configuration list for PBXProject "W1_lab_challengeOne_facebook" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -187,6 +190,7 @@
 				CECF20CC1DAE232E007D5F31 /* RequestsViewController.swift in Sources */,
 				CE6305581DAE19C70079496D /* AppDelegate.swift in Sources */,
 				CECF20D61DAF0355007D5F31 /* StatusViewController.swift in Sources */,
+				CEBF5BD31DD655B700356C40 /* TappedPhotoViewController.swift in Sources */,
 				CECF20D41DAED098007D5F31 /* DetailViewController.swift in Sources */,
 				CECF20DA1DAF036A007D5F31 /* CheckInViewController.swift in Sources */,
 				CE93B4A81DB9B14E007E8621 /* LoginViewController.swift in Sources */,
@@ -336,7 +340,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE63054F1DAE19C70079496D /* Build configuration list for PBXProject "week5_assgmntFacebook" */ = {
+		CE63054F1DAE19C70079496D /* Build configuration list for PBXProject "W1_lab_challengeOne_facebook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE6305641DAE19C70079496D /* Debug */,

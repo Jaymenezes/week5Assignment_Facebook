@@ -31,6 +31,7 @@ class FeedViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
     @IBAction func didTapPhotoImageView(_ sender: UITapGestureRecognizer) {
         selectedImageView = sender.view as! UIImageView
         selectedImageView.frame = sender.view!.frame
@@ -38,6 +39,13 @@ class FeedViewController: UIViewController, UIScrollViewDelegate {
         sender.numberOfTapsRequired = 2
         
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+        
+    }
+    
+    
 
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

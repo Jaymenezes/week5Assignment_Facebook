@@ -12,6 +12,9 @@ class ImageTranstition: BaseTransition {
     
     
     var originalSelectedImageViewFrame: CGRect!
+    var originalTappedImageViewFrame: CGRect!
+
+    var blackView: UIView!
     
     
     override func presentTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
@@ -26,46 +29,51 @@ class ImageTranstition: BaseTransition {
         
         let selectedImageView = feedViewController.selectedImageView
         let tappedPhotoImageView = tappedPhotoViewController.tappedImageView
-        let navBarImageView = feedViewController.navBar
         
         
-        originalSelectedImageViewFrame = selectedImageView!.frame
+        originalSelectedImageViewFrame = selectedImageView!.frame.offsetBy(dx: 0, dy: 126)
 
         
         selectedImageView!.isHidden = true
         
+        //create lightBoxBG
+        blackView = UIView(frame: tappedPhotoViewController.view.frame)
+        blackView.backgroundColor = UIColor.black
+        blackView.alpha = 0
+        containerView.addSubview(blackView)
+
+        
         // creating window
 
         let movingImage = UIImageView(frame: originalSelectedImageViewFrame)
-        //        movingImage.frame = movingImage.frame.convert(selectedImageView.frame, to: containerView)
-
-
-        movingImage.frame = originalSelectedImageViewFrame
-        movingImage.frame = originalSelectedImageViewFrame.offsetBy(dx: 0, dy: 126)
-        movingImage.image =  selectedImageView?.image
-        movingImage.contentMode = (selectedImageView?.contentMode)!
-        movingImage.clipsToBounds = (selectedImageView?
-            .clipsToBounds)!
-        
-        
-        
+        movingImage.contentMode = UIViewContentMode.scaleAspectFill
+        movingImage.clipsToBounds = selectedImageView!.clipsToBounds
+        movingImage.image =  selectedImageView!.image
         let window = UIApplication.shared.keyWindow
         window?.addSubview(movingImage)
         
-        tappedPhotoViewController.tappedImageView.isHidden = true
+        
+  
+        
         containerView.addSubview((tappedPhotoViewController.view)!)
         tappedPhotoViewController.view.alpha = 0
-//        containerView.addSubview(movingImage)
 
         UIView.animate(withDuration: duration, animations: {
+            tappedPhotoViewController.tappedImageView.isHidden = true
             tappedPhotoViewController.view.alpha = 1
-            movingImage.frame = tappedPhotoViewController.tappedImageView.frame.offsetBy(dx: 0, dy: 65)
-            movingImage.contentMode = tappedPhotoViewController.tappedImageView.contentMode
-            movingImage.clipsToBounds = tappedPhotoViewController.tappedImageView.clipsToBounds
+            self.blackView.alpha = 1
+            
+            movingImage.frame = tappedPhotoViewController.tappedImageView.frame.offsetBy(dx: 0, dy: 52)
+            movingImage.contentMode = UIViewContentMode.scaleAspectFit
 
             
         }) { (finished: Bool) -> Void in
+            movingImage.contentMode = (tappedPhotoImageView?.contentMode)!
+
+            movingImage.clipsToBounds = tappedPhotoImageView!.clipsToBounds
+            
             movingImage.removeFromSuperview()
+            self.blackView.removeFromSuperview()
             tappedPhotoViewController.tappedImageView.isHidden = false
             selectedImageView?.isHidden = false
             self.finish()
@@ -78,25 +86,64 @@ class ImageTranstition: BaseTransition {
     }
     
     override func dismissTransition(containerView: UIView, fromViewController: UIViewController, toViewController: UIViewController) {
-//        let profileViewController = fromViewController as! CardsProfileViewController
-//        let profileImageView = profileViewController.profilePhotoImage
-//        originalCardsImageViewFrame = profileImageView!.frame
-//        
-//        
-//        let cardsViewController = toViewController as! CardsViewController
-//        let cardsImageView = cardsViewController.mainPhoto
         
         
-//        profileImageView!.frame = self.originalCardsImageViewFrame
+        let tappedPhotoViewController = fromViewController as! TappedPhotoViewController
+        let tabViewController = toViewController as! UITabBarController
+        let navigationController = tabViewController.selectedViewController as! UINavigationController
+        let feedViewController = navigationController.topViewController as! FeedViewController
+        
+        
+        let selectedImageView = feedViewController.selectedImageView
+        let tappedPhotoImageView = tappedPhotoViewController.tappedImageView
+        
+        originalTappedImageViewFrame = tappedPhotoImageView!.frame.offsetBy(dx: 0, dy: 52)
+        
+        
+        selectedImageView!.isHidden = true
+        
+
+        
+        
+        // creating window
+        
+        let movingImage = UIImageView(frame: originalTappedImageViewFrame)
+        movingImage.contentMode = UIViewContentMode.scaleAspectFill
+        movingImage.clipsToBounds = selectedImageView!.clipsToBounds
+        movingImage.image =  tappedPhotoImageView!.image
+        let window = UIApplication.shared.keyWindow
+        window?.addSubview(movingImage)
+        
+        
+        blackView = UIView(frame: tappedPhotoViewController.view.frame)
+        blackView.backgroundColor = UIColor.black
+        blackView.alpha = 0
+        containerView.addSubview(blackView)
+        self.blackView.alpha = 0.4
 
         UIView.animate(withDuration: duration, animations: {
-//            profileImageView!.frame = (cardsImageView!.frame)
-
+            tappedPhotoImageView?.isHidden = true
+            self.blackView.alpha = 0
+            
+            movingImage.frame = selectedImageView!.frame.offsetBy(dx: 0, dy: 126)
+            movingImage.contentMode = (tappedPhotoImageView?.contentMode)!
             
             
         }) { (finished: Bool) -> Void in
+            movingImage.contentMode = (tappedPhotoImageView?.contentMode)!
+            movingImage.clipsToBounds = tappedPhotoImageView!.clipsToBounds
+
+            movingImage.removeFromSuperview()
+            self.blackView.removeFromSuperview()
+            
+            selectedImageView?.isHidden = false
             self.finish()
         }
+
+
+
+
+     
     }
     
     

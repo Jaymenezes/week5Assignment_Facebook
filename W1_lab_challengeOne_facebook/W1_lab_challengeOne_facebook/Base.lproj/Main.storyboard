@@ -157,27 +157,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="zN5-27-Vhz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="photo_actions" id="Ae4-oG-ThA">
                                 <rect key="frame" x="0.0" y="614" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" pagingEnabled="YES" maximumZoomScale="4" id="lcp-sn-e02">
-                                <rect key="frame" x="0.0" y="65" width="375" height="540"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="4" id="lcp-sn-e02">
+                                <rect key="frame" x="0.0" y="52" width="375" height="562"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="6L5-zg-MBR">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="540"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="wedding1" id="6L5-zg-MBR">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="562"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <view contentMode="scaleToFill" misplaced="YES" id="XuG-yv-JaY">
-                                        <rect key="frame" x="-58" y="-63" width="240" height="63"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
                                 </subviews>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vfJ-Ul-VCg">
-                                <rect key="frame" x="290" y="14" width="79" height="42"/>
+                                <rect key="frame" x="302" y="10" width="79" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="doneButton"/>
                                 <connections>
@@ -189,11 +189,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pageControl>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="actionsImage" destination="Ae4-oG-ThA" id="jmj-B5-1hf"/>
+                        <outlet property="doneButton" destination="vfJ-Ul-VCg" id="xqu-xV-jQb"/>
+                        <outlet property="lightBox" destination="zN5-27-Vhz" id="Bff-ad-CDu"/>
                         <outlet property="tappedImageView" destination="6L5-zg-MBR" id="CLH-h9-cyX"/>
                         <outlet property="tappedPhotoPageControl" destination="jtc-Zu-IsI" id="1Y5-E1-Urf"/>
                         <outlet property="tappedScrollView" destination="lcp-sn-e02" id="1VO-yh-arf"/>

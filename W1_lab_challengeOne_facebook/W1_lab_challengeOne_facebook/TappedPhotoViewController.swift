@@ -12,6 +12,9 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var tappedScrollView: UIScrollView!
     @IBOutlet weak var tappedImageView: UIImageView!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var actionsImage: UIImageView!
+    @IBOutlet weak var lightBox: UIView!
     
     @IBOutlet weak var tappedPhotoPageControl: UIPageControl!
     var tappedImageCenterX: CGFloat!
@@ -20,9 +23,9 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
     var wedding_3: UIImage!
     var wedding_4: UIImage!
     var wedding_5: UIImage!
-
     
     var image: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tappedImageView.image = image
@@ -60,7 +63,7 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
 //        }
      
         
-        
+
         
         
 
@@ -76,7 +79,53 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
         dismiss(animated: true, completion: nil)
     }
     
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+       print(tappedScrollView.contentOffset)
+        
+
+        
+        if tappedScrollView.contentOffset.y > 0 &&  tappedScrollView.contentOffset.y < 100 {
+            let alphaLightBox = convertValue(inputValue: tappedScrollView.contentOffset.y, r1Min: 0, r1Max: 100, r2Min: 1, r2Max: 0.3)
+            
+            lightBox.alpha = alphaLightBox
+            
+             let alphaButtons = convertValue(inputValue: tappedScrollView.contentOffset.y, r1Min: 0, r1Max: 100, r2Min: 1, r2Max: 0)
+            self.doneButton.alpha = alphaButtons
+            self.actionsImage.alpha = alphaButtons
+            
+        } else if tappedScrollView.contentOffset.y > -100 &&  tappedScrollView.contentOffset.y < 0 {
+            let alphaLightBox = convertValue(inputValue: tappedScrollView.contentOffset.y, r1Min: 0, r1Max: -100, r2Min: 1, r2Max: 0.3)
+            lightBox.alpha = alphaLightBox
+            
+            let alphaButtons = convertValue(inputValue: tappedScrollView.contentOffset.y, r1Min: 0, r1Max: -100, r2Min: 1, r2Max: 0)
+            
+            
+            self.doneButton.alpha = alphaButtons
+            self.actionsImage.alpha = alphaButtons
+        
+        
+        } else if tappedScrollView.contentOffset.y < -120 && tappedScrollView.contentOffset.y > 120 {
+            
+
+            UIView.animate(withDuration: 0.4, animations: {
+                
+                self.dismiss(animated: true, completion: nil)
+
+            })
+            
+        }
+        
+    }
+    
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        UIView.animate(withDuration: 0.4, animations: {
+            self.doneButton.alpha = 1
+            self.actionsImage.alpha = 1
+        })
+        
         let page: Int = Int(round(tappedScrollView.contentOffset.x / 375))
         tappedPhotoPageControl.currentPage = page
         if page == 0 {

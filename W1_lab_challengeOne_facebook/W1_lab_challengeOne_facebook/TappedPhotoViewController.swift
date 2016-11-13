@@ -103,20 +103,51 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
             
             self.doneButton.alpha = alphaButtons
             self.actionsImage.alpha = alphaButtons
-        
-        
-        } else if tappedScrollView.contentOffset.y < -120 && tappedScrollView.contentOffset.y > 120 {
-            
-
-            UIView.animate(withDuration: 0.4, animations: {
-                
-                self.dismiss(animated: true, completion: nil)
-
-            })
-            
         }
         
+//         else if tappedScrollView.contentOffset.y < -120 {
+//            print("dismiss on scroll")
+//             UIView.animate(withDuration: 0.4, animations: {
+//                
+//                self.dismiss(animated: true, completion: nil)
+//
+//            })
+//            
+//        } else if tappedScrollView.contentOffset.y > 120 {
+//            print("dismiss on scroll")
+//            UIView.animate(withDuration: 0.4, animations: {
+//                
+//                self.dismiss(animated: true, completion: nil)
+//                
+//            })
+//        }
+        
     }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        lightBox.isHidden = true
+        doneButton.isHidden = true
+        actionsImage.isHidden = true
+        if tappedScrollView.contentOffset.y < -120 {
+            print("dismiss on scroll")
+            UIView.animate(withDuration: 0.4, animations: {
+
+                self.dismiss(animated: true, completion: nil)
+                
+            })
+            
+        } else if tappedScrollView.contentOffset.y > 120 {
+            print("dismiss on scroll")
+            UIView.animate(withDuration: 0.4, animations: {
+//                self.lightBox.removeFromSuperview()
+                
+                self.dismiss(animated: true, completion: nil)
+                
+            })
+        }
+
+    }
+    
     
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -154,6 +185,7 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
         
     }
 
+    
 
     /*
     // MARK: - Navigation

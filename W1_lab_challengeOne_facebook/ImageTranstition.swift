@@ -114,16 +114,16 @@ class ImageTranstition: BaseTransition {
         let window = UIApplication.shared.keyWindow
         window?.addSubview(movingImage)
         
-        
+
         blackView = UIView(frame: tappedPhotoViewController.view.frame)
         blackView.backgroundColor = UIColor.black
         blackView.alpha = 0
         containerView.addSubview(blackView)
-        self.blackView.alpha = 0.4
-
+        self.blackView.alpha = 0.6
         UIView.animate(withDuration: duration, animations: {
             tappedPhotoImageView?.isHidden = true
             self.blackView.alpha = 0
+            
             
             movingImage.frame = selectedImageView!.frame.offsetBy(dx: 0, dy: 126)
             movingImage.contentMode = (tappedPhotoImageView?.contentMode)!

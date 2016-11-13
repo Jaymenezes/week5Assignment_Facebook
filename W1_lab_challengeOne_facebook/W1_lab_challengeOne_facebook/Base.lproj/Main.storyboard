@@ -184,7 +184,7 @@
                                     <action selector="didPressDone:" destination="bcC-5s-6Kp" eventType="touchUpInside" id="Uxe-kZ-aJx"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" id="jtc-Zu-IsI">
+                            <pageControl opaque="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" id="jtc-Zu-IsI">
                                 <rect key="frame" x="265" y="614" width="39" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </pageControl>

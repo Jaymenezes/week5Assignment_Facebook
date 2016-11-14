@@ -24,6 +24,7 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
     var wedding_4: UIImage!
     var wedding_5: UIImage!
     
+    
     var image: UIImage!
     
     override func viewDidLoad() {
@@ -34,7 +35,7 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
         tappedImageCenterX = view.center.x
         tappedImageView.center.x = tappedImageCenterX
         
-        tappedScrollView.contentSize = CGSize(width: 1875, height: 1000)
+        tappedScrollView.contentSize = CGSize(width: 1875, height: 800)
         tappedScrollView.frame.size = CGSize(width: 375, height: 667)
         
         wedding_1 = UIImage(named: "wedding1")
@@ -81,7 +82,6 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
     
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-       print(tappedScrollView.contentOffset)
         
 
         
@@ -105,31 +105,17 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
             self.actionsImage.alpha = alphaButtons
         }
         
-//         else if tappedScrollView.contentOffset.y < -120 {
-//            print("dismiss on scroll")
-//             UIView.animate(withDuration: 0.4, animations: {
-//                
-//                self.dismiss(animated: true, completion: nil)
-//
-//            })
-//            
-//        } else if tappedScrollView.contentOffset.y > 120 {
-//            print("dismiss on scroll")
-//            UIView.animate(withDuration: 0.4, animations: {
-//                
-//                self.dismiss(animated: true, completion: nil)
-//                
-//            })
-//        }
+
         
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        lightBox.isHidden = true
-        doneButton.isHidden = true
-        actionsImage.isHidden = true
+
         if tappedScrollView.contentOffset.y < -120 {
             print("dismiss on scroll")
+            lightBox.isHidden = true
+            doneButton.isHidden = true
+            actionsImage.isHidden = true
             UIView.animate(withDuration: 0.4, animations: {
 
                 self.dismiss(animated: true, completion: nil)
@@ -138,8 +124,10 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
             
         } else if tappedScrollView.contentOffset.y > 120 {
             print("dismiss on scroll")
+            lightBox.isHidden = true
+            doneButton.isHidden = true
+            actionsImage.isHidden = true
             UIView.animate(withDuration: 0.4, animations: {
-//                self.lightBox.removeFromSuperview()
                 
                 self.dismiss(animated: true, completion: nil)
                 
@@ -184,6 +172,86 @@ class TappedPhotoViewController: UIViewController, UIScrollViewDelegate {
         }
         
     }
+    
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        tappedScrollView.isScrollEnabled = false
+        
+        lightBox.isHidden = false
+        lightBox.alpha = 1
+       
+            doneButton.isHidden = true
+            actionsImage.isHidden = true
+        
+      print("zoom began")
+
+    }
+    
+
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+       print("zoom ended")
+        print(tappedScrollView.zoomScale)
+        lightBox.alpha = 1
+        
+        
+        
+        let page: Int = Int(round(tappedScrollView.contentOffset.x / 375))
+        tappedPhotoPageControl.currentPage = page
+        tappedScrollView.isScrollEnabled = true
+
+        
+        if tappedScrollView.zoomScale < 1.5 {
+            print("zoomScale down")
+
+            self.tappedScrollView.frame = CGRect(x: 0, y: 52, width: 375, height: 562)
+            self.tappedImageView.frame = CGRect(x: 0, y: 0, width: 375, height: 562)
+
+            doneButton.isHidden = false
+            actionsImage.isHidden = false
+            
+            
+
+            
+            
+        }else if tappedScrollView.zoomScale > 1.5 {
+            print("zoomScale up")
+            doneButton.isHidden = true
+            actionsImage.isHidden = true
+            tappedScrollView.isScrollEnabled = true
+            
+            tappedScrollView.contentSize.applying(CGAffineTransform.init(scaleX: 2, y: 2))
+            tappedScrollView.frame = CGRect(x: 0, y: 0, width: 375, height: 667)
+            
+        }
+
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        print("is zooming")
+
+        tappedScrollView.contentSize.applying(CGAffineTransform.init(scaleX: 2, y: 2))
+        lightBox.alpha = 1
+        UIView.animate(withDuration: 0.4, animations: {
+            
+            self.tappedScrollView.frame = CGRect(x: 0, y: 0, width: 375, height: 667)
+            
+        })
+
+//        tappedImageView.center = tappedScrollView.center
+        
+    }
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        
+
+
+        
+        
+        return tappedImageView
+        
+        
+
+    }
+
 
     
 

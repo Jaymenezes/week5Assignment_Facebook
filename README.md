@@ -8,30 +8,31 @@ Time spent: `<Number of hours spent>`
 
 #### Required
 
-- [ ] Tapping on a photo in the news feed should expand the photo full screen.
-- [ ] Tapping the Done button should animate the photo back into its position in the news feed.
-- [ ] On scroll of the full screen photo, the background should start to become transparent, revealing the feed.
-- [ ] If the user scrolls a large amount and releases, the full screen photo should dismiss.
+- [x] Tapping on a photo in the news feed should expand the photo full screen.
+- [x] Tapping the Done button should animate the photo back into its position in the news feed.
+- [x] On scroll of the full screen photo, the background should start to become transparent, revealing the feed.
+- [x] If the user scrolls a large amount and releases, the full screen photo should dismiss.
 
 #### Optional
 
-- [ ] The full screen photo should be zoomable.
-- [ ] The user should be able to page through the other photos in full screen mode.
+- [x] The full screen photo should be zoomable.
+- [x] The user should be able to page through the other photos in full screen mode.
 
 #### The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] List anything else that you can get done to improve the app functionality!
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. Couldn't get the movingIMage View to respect the contentMode of the tappedImageView. It would not transition from aspectFill to aspectFit on click. 
+2. Major bugs with zooming.
+3. Couldn't get the contentOffset of the scrollView to work correctly on the performSegue method.
 
 ### Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='week5_facebook_ImageScroll.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
